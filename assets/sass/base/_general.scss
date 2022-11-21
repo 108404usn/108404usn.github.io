@@ -1,0 +1,286 @@
+* {
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    image-rendering: -webkit-optimize-contrast;
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+}
+
+::-moz-selection { background: $black; color: #fff; }
+::selection { background: $black; color: #fff; }
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    color: #000;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    margin: 0;
+}
+
+a,
+a:visited {
+    color: inherit;
+}
+
+.template {
+    min-height: calc(100vh - 60px);
+    max-width: 100vw;
+    overflow: hidden;
+}
+
+.container {
+    @include row();
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.header {
+    position: relative;
+    background: $blue;
+    padding-top: 170px;
+    padding-bottom: 80px;
+
+    @include breakpoint($mediumDown) {
+        padding-top: 120px;
+        padding-bottom: 60px;
+
+    }
+
+    .frontpage-link {
+        position: absolute;
+        top: 50px;
+        left: 76px;
+        text-decoration: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: $white;
+        z-index: 101;
+
+        &:hover {
+            text-decoration: underline;
+            cursor: pointer;
+        }
+
+        @include breakpoint($mediumDown) {
+            top: 35px;
+            left: 30px;
+
+            span {
+                display: none;
+            }
+        }
+    }
+
+    .header-title {
+        @include col(12);
+        @include title1();
+        padding-left: 0;
+        word-wrap: break-word;
+
+        @include breakpoint($mediumDown) {
+            @include title4();
+            color: $white;
+            padding-left: 20px;
+        }
+    }
+}
+
+.content {
+    @include col(12);
+    margin-top: 60px;
+    margin-bottom: 60px;
+
+    @include breakpoint($mediumDown) {
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+
+    .ingress {
+        @include subtitle24();
+        text-decoration: none;
+        margin-bottom: 50px;
+
+        @include breakpoint($mediumDown) {
+            @include subtitle20();
+            margin-bottom: 30px;
+        }
+    }
+
+    .section-title {
+        @include col(12);
+        @include title4();
+        padding: 0;
+        margin-bottom: 10px;   
+    }
+
+    .section-subtitle {
+        @include button20();
+    }
+
+    .text-section {
+        @include col(12);
+        @include body18();
+        padding: 0;
+        margin-bottom: 40px;
+
+        @include breakpoint($mediumDown) {
+            margin-bottom: 30px;
+        }
+    }
+
+    .source {
+        margin-bottom: 20px;
+    }
+
+    .accordion-section-title {
+        margin-bottom: 20px;
+        display: flex;
+
+        svg {
+            align-self: center;
+            margin-top: 3px;
+            margin-left: 16px;
+            transition: transform 200ms ease-in-out;
+        }
+
+        &:hover {
+            cursor: pointer;
+        }
+
+        &.svg-animation {
+            svg {       
+                transform: rotate(-180deg);
+            }
+        }
+    }
+
+    .accordion-item {
+        display: block;
+        margin-bottom: 15px;
+
+        .accordion-title-wrapper {
+            display: flex;
+
+            svg {
+                transition: transform 200ms ease-in-out;
+            }
+
+            .accordion-title {
+                @include button20();
+                margin-bottom: 10px;
+            }
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
+
+        .accordion-text {
+            @include body18();
+            height: 0px;
+            overflow: hidden;
+            opacity: 0;
+            transition: 200ms ease-in-out;
+        }
+
+        &.open {
+            svg {
+                transform: rotate(90deg);
+            }
+            .accordion-text {
+                height: auto;
+                opacity: 1;
+                margin-left: 25px;
+                margin-bottom: 25px;
+            }
+        }
+    }
+}
+
+.bottom-links {
+    .container {
+        @include col(12);
+        justify-content: center;
+        margin-bottom: 60px;
+
+        .link-element {
+            color: $grey120;
+            font-size: 20px;
+            font-weight: 300;
+            text-decoration: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            &:hover {
+                text-decoration: underline;
+                cursor: pointer;
+                color: $black;
+            }
+
+            @include breakpoint($smallDown) {
+                span {
+                    display: none;
+                }
+            }
+        }
+
+        .top {
+            margin-left: 120px;
+            margin-right: 120px;
+
+            @include breakpoint($smallDown) {
+                margin-left: 80px;
+                margin-right: 80px;
+            }
+         }
+    }
+} 
+
+// button
+.button {
+    &,
+    &[a],
+    &[type="submit"],
+    &:visited {
+        @include button16();
+        appearance: none;
+        text-decoration: none;
+        line-height: 46px;
+        height: 48px;
+        padding: 0 66px;
+        border-radius: 28px;
+        background-color: $white;
+        border: 1px solid $white;
+        color: $black;
+        display: inline-block;
+        cursor: pointer;
+        text-align: center;
+        user-select: none;
+        transition: all 200ms ease-in-out;
+
+        @include breakpoint($mediumDown) {
+
+        }
+    }
+
+    //hover and active
+    &:hover {
+        background: $grey100;
+        border: 1px solid $grey100;
+        color: $white;
+    }
+
+    &:active {
+        background: $black;
+        border: 1px solid $black;
+        color: $white;
+    }
+}

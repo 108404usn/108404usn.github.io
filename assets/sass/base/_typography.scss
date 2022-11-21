@@ -1,0 +1,199 @@
+/* ----------------------
+Text helper function
+---------------------- */
+@mixin text(
+    $fontSize,
+    $lineHeight: 100%,
+    $color: inherit,
+    $fontWeight: 400,
+    $textTransform: none,
+) {
+    font-size: $fontSize;
+    line-height: $lineHeight;
+    font-weight: $fontWeight;
+    text-transform: $textTransform;
+
+    @if ($color != inherit) {
+        color: $color;
+    }
+}
+
+$font-weight-normal: 400;
+$font-weight-bold: 600;
+
+/* ------------------
+Text classes
+------------------ */
+
+//Display titles
+@mixin display() {
+    font-family: 'Roboto Flex';
+    font-size: 56px;
+    font-weight: 300;
+    line-height: 130%;
+    letter-spacing: -1%;
+    color: $black;
+}
+
+//Titles
+@mixin title1() {
+    font-family: 'Literata';
+    font-size: 48px;
+    font-weight: 400;
+    line-height: 140%;
+    color: $white;
+}
+
+@mixin title2() {
+    font-family: 'Roboto Flex';
+    font-size: 40px;
+    font-weight: 300;
+    line-height: 140%;
+    color: $black;
+}
+
+@mixin title3() {
+    font-family: 'Roboto Flex';
+    font-size: 36px;
+    font-weight: 300;
+    line-height: 140%;
+    color: $black;
+}
+
+@mixin title4() {
+    font-family: 'Literata';
+    font-size: 30px;
+    font-weight: 300;
+    line-height: 140%;
+    color: $black;
+}
+
+@mixin title5() {
+    font-family: 'Literata';
+    font-size: 26px;
+    font-weight: 300;
+    line-height: 140%;
+    color: $black;
+}
+
+
+//Subtitle
+@mixin subtitle28() {
+    font-family: 'Roboto Flex';
+    font-size: 28px;
+    font-weight: 400;
+    line-height: 140%;
+    color: $black;
+}
+
+@mixin subtitle24() {
+    font-family: 'Roboto Flex';
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 140%;
+    color: $black;
+}
+
+@mixin subtitle20() {
+    font-family: 'Roboto Flex';
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 140%;
+    color: $black;
+}
+
+//Ingress
+@mixin ingress28() {
+    font-family: 'Roboto Flex';
+    font-size: 28px;
+    font-weight: 300;
+    line-height: 150%;
+    color: $black;
+}
+
+@mixin ingress24() {
+    font-family: 'Roboto Flex';
+    font-size: 24px;
+    font-weight: 300;
+    line-height: 150%;
+    color: $black;
+}
+
+@mixin ingress20() {
+    font-family: 'Roboto Flex';
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 170%;
+    color: $black;
+}
+
+//Body
+@mixin body18() {
+    font-family: 'Roboto Flex';
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 170%;
+    color: $black;
+}
+
+@mixin body16() {
+    font-family: 'Roboto Flex';
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 150%;
+    color: $black;
+}
+
+//Buttons
+@mixin button20() {
+    font-family: 'Roboto Flex';
+    font-size: 20px;
+    font-weight: 400;
+    letter-spacing: 1%;
+    color: $black;
+}
+
+@mixin button18() {
+    font-family: 'Roboto Flex';
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 1%;
+    color: $black;
+}
+
+@mixin button16() {
+    font-family: 'Roboto Flex';
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 1%;
+    color: $black;
+}
+
+//Mobile
+@mixin mobingress19() {
+    font-family: 'Roboto Flex';
+    font-size: 19px;
+    font-weight: 300;
+    line-height: 150%;
+    color: $black;
+}
+
+@mixin mobbody17() {
+    font-family: 'Roboto Flex';
+    font-size: 17px;
+    font-weight: 300;
+    line-height: 150%;
+    color: $black;
+}
+
+@mixin mobbody15() {
+    font-family: 'Roboto Flex';
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 150%;
+    color: $black;
+}
+
+
+
+
