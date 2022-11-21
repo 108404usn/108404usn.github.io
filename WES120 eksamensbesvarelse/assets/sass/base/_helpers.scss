@@ -1,0 +1,98 @@
+$vw-viewport: 1680;
+$vh-viewport: 1050;
+
+@mixin clearfix() {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+@mixin reset-list() {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+@mixin reset-button() {
+    background: none;
+    border: 0;
+    color: inherit;
+    font: inherit;
+    line-height: normal;
+    overflow: visible;
+    padding: 0;
+    text-decoration: none;
+    border-radius: 0;
+    font-weight: normal;
+    cursor: pointer;
+
+    &:active,
+    &:visited,
+    &:focus {
+        color: inherit;
+    }
+}
+
+@mixin reset-input() {
+    background: none;
+    border: 0;
+    color: inherit;
+    font: inherit;
+    line-height: normal;
+    overflow: visible;
+    padding: 0;
+    text-decoration: none;
+    border-radius: 0;
+    font-weight: normal;
+
+    &:active,
+    &:visited,
+    &:focus {
+        color: inherit;
+    }
+}
+
+@mixin width-constrainer() {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@mixin flex-item-padding() {
+    padding-top: 100px;
+    padding-bottom: 100px;
+
+    @include breakpoint($mediumDown) {
+        padding-top: 40px;
+        padding-bottom: 40px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
+@mixin flex-item-padding-top() {
+    padding-top: 100px;
+
+    @include breakpoint($mediumDown) {
+        padding-top: 40px;
+    }
+}
+
+@mixin flex-item-padding-bottom() {
+    padding-bottom: 100px;
+
+    @include breakpoint($mediumDown) {
+        padding-bottom: 40px;
+    }
+}
+
+@function pxToVw($size) {
+    $vw-context: $vw-viewport * 0.01 * 1px;
+    @return $size / $vw-context * 1vw;
+    @return $size;
+}
+
+@function pxToVh($size) {
+    $vh-context: $vh-viewport * 0.01 * 1px;
+    @return $size / $vh-context * 1vh;
+    @return $size;
+}
